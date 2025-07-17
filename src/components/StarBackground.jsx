@@ -5,7 +5,9 @@ export const StarBackground = () => {
     const [meteors, setMeteors] = useState([]);
     useEffect(() => {
         generateStars();
+        generateMeteors();
     }, []);
+
 
     const generateStars = () => {
         const numberOfStars = Math.floor(
@@ -27,7 +29,7 @@ export const StarBackground = () => {
     };
 
     const generateMeteors = () => {
-        const numberOfMeteors = 4;
+        const numberOfMeteors = 8;
         const newMeteors = [];
 
         for (let i = 0; i < numberOfMeteors; i++) {
@@ -35,7 +37,7 @@ export const StarBackground = () => {
                 id: i,
                 size: Math.random() * 2 + 1,
                 x: Math.random() * 100,
-                y: Math.random() * 20,
+                y: Math.random() * 50,
                 delay: Math.random() * 15,
                 animationDuration: Math.random() * 3 + 3,
             });
@@ -46,10 +48,10 @@ export const StarBackground = () => {
 
     return (
         <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
-            {stars.map((star) => (  // FIXED: added missing parentheses
+            {stars.map((star) => ( 
                 <div
                     key={star.id}
-                    className="absolute bg-white rounded-full animate-pulse-subtle" // ensure "absolute" and "bg-white" exist
+                    className="absolute bg-white rounded-full animate-pulse-subtle" 
                     style={{
                         width: `${star.size}px`,
                         height: `${star.size}px`,
@@ -57,21 +59,21 @@ export const StarBackground = () => {
                         top: `${star.y}%`,
                         opacity: star.opacity,
                         animationDuration: `${star.animationDuration}s`,
-                        position: 'absolute',
                     }}
                 />
             ))}
 
-            {meteors.map((meteor) => (  // FIXED: added missing parentheses
+            {meteors.map((meteor) => (
                 <div
                     key={meteor.id}
-                    className="absolute bg-white rounded-full animate-pulse-subtle" // ensure "absolute" and "bg-white" exist
+                    className="meteor animate-meteor"
                     style={{
-                        width: `${meteor.size}px`,
-                        height: `${meteor.size}px`,
-                        left: `${meteor.x}%`,
-                        top: `${meteor.y}%`,
-                        animationDuration: `${meteor.animationDuration}s`,
+                        width: meteor.size * 30 +"px",
+                        height: meteor.size*1+"px",
+                        left: meteor.x+"%",
+                        top: meteor.y+"%",
+                        animationDelay: meteor.delay,
+                        animationDuration: meteor.animationDuration+"s",
                     }}
                 />
             ))}
