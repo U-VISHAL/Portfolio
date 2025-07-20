@@ -15,8 +15,6 @@ export const HeroSection = () => {
                         voluptatem exercitationem sapiente fuga tempore distinctio sunt natus, impedit 
                         exercitationem voluptatibus minima veniam corporis sapiente. Inventore dicta, neque 
                         omnis a est quod laborum rerum fuga corporis assumenda iure odio saepe similique 
-                        rem dolor quaerat quas sunt temporibus, placeat voluptatum. Similique et ipsa, 
-                        possimus ut repellendus molestias ipsum sint nobis assumenda aliquid corporis, ?
                     </p>
 
                 <div>
