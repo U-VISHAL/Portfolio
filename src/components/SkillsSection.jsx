@@ -15,11 +15,15 @@ const skills = [
     {name:"Git", level:80, category:"tools"},
     {name:"VS Code", level:90, category:"tools"},
     {name:"Docker", level:75, category:"tools"},
-    {name:"Figma", level:80, category:"tools"}
+    {name:"Figma", level:80, category:"tools"},
+    //Programming Languages
+    {name:"Python", level:70, category:"Languages"},
+    {name:"Java", level:85, category:"Languages"},
+    {name:"C", level:75, category:"Languages"},
 
 ];
 
-const categories = ["all", "frontend", "backend", "tools"]
+const categories = ["all", "frontend", "backend","Languages", "tools"]
 
 export const SkillsSection = () => {
     const [ActiveCategory, setActiveCategory] = useState("all");
